@@ -23,31 +23,23 @@ class ViewController: UIViewController {
     var green: CGFloat = 0.50
     var blue: CGFloat = 0.50
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         redLabel.text = "0.50"
         greenLabel.text = "0.50"
         blueLabel.text = "0.50"
-    }
-    
-    @IBAction func redSliderChanged(_ sender: Any) {
-        let colour = String(format: "%.2f", redSlider.value)
-        redLabel.text = "\(colour)"
-        red = CGFloat(redSlider.value)
         colourBox.backgroundColor = UIColor(displayP3Red: red, green: green, blue: blue, alpha: 1)
     }
     
-    @IBAction func greenSliderChanged(_ sender: Any) {
-        let colour = String(format: "%.2f", greenSlider.value)
-        greenLabel.text = "\(colour)"
-        green = CGFloat(greenSlider.value)
-        colourBox.backgroundColor = UIColor(displayP3Red: red, green: green, blue: blue, alpha: 1)
+    @IBAction func redSliderChanged(_ sender: UISlider) {
+        changeColour(valueOfSlider: sender.value)
     }
     
-    @IBAction func blueSliderChanged(_ sender: Any) {
-        let colour = String(format: "%.2f", blueSlider.value)
+    func changeColour(valueOfSlider: Float) {
+        let colour = String(format: "%.2f", valueOfSlider)
         blueLabel.text = colour
-        blue = CGFloat(blueSlider.value)
+        blue = CGFloat(valueOfSlider)
         colourBox.backgroundColor = UIColor(displayP3Red: red, green: green, blue: blue, alpha: 1)
     }
     

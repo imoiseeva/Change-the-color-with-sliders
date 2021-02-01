@@ -18,7 +18,6 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cwr-ei-Psx">
                                 <rect key="frame" x="16" y="54" width="382" height="150"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="BwA-qG-fXf">
                                 <rect key="frame" x="16" y="244" width="382" height="160"/>
@@ -80,7 +79,7 @@
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="QXy-sX-zRU">
                                                 <rect key="frame" x="120" y="0.0" width="264" height="31"/>
                                                 <connections>
-                                                    <action selector="greenSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="yHE-Yi-Vbm"/>
+                                                    <action selector="redSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="h5n-Wk-z8I"/>
                                                 </connections>
                                             </slider>
                                         </subviews>
@@ -111,7 +110,7 @@
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="mzc-y5-kek">
                                                 <rect key="frame" x="120" y="0.0" width="264" height="31"/>
                                                 <connections>
-                                                    <action selector="blueSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="tay-IM-XT9"/>
+                                                    <action selector="redSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="zg1-Oh-psM"/>
                                                 </connections>
                                             </slider>
                                         </subviews>
@@ -149,9 +148,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
