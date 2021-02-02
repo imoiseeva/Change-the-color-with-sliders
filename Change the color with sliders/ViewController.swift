@@ -19,29 +19,41 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var colourBox: UIView!
     
-    var red: CGFloat = 0.50
-    var green: CGFloat = 0.50
-    var blue: CGFloat = 0.50
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        redLabel.text = "0.50"
-        greenLabel.text = "0.50"
-        blueLabel.text = "0.50"
-        colourBox.backgroundColor = UIColor(displayP3Red: red, green: green, blue: blue, alpha: 1)
+        
+        colourBox.layer.cornerRadius = 15
+        
+        changeColour()
+        
     }
     
     @IBAction func redSliderChanged(_ sender: UISlider) {
-        changeColour(valueOfSlider: sender.value)
+        
+        changeColour()
+        
+        switch sender.tag {
+        case 0: redLabel.text = createString(from: sender)
+        case 1: greenLabel.text = createString(from: sender)
+        case 2: blueLabel.text = createString(from: sender)
+        default: break
+        }
+        
     }
     
-    func changeColour(valueOfSlider: Float) {
-        let colour = String(format: "%.2f", valueOfSlider)
-        blueLabel.text = colour
-        blue = CGFloat(valueOfSlider)
-        colourBox.backgroundColor = UIColor(displayP3Red: red, green: green, blue: blue, alpha: 1)
+    private func changeColour() {
+        
+        colourBox.backgroundColor =  UIColor(red: CGFloat(redSlider.value),
+                                             green: CGFloat(greenSlider.value),
+                                             blue: CGFloat(blueSlider.value),
+                                             alpha: 1)
+    }
+    
+    private func createString(from slider: UISlider) -> String {
+        String(format: "%.2f", slider.value)
     }
     
 }
+
+
 
