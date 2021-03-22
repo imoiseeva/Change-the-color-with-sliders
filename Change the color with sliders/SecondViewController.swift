@@ -39,7 +39,7 @@ class SecondViewController: UIViewController {
     }
     
     // MARK: - IB Actions
-    @IBAction func redSliderChanged(_ sender: UISlider) {
+    @IBAction func sliderChanged(_ sender: UISlider) {
         
         switch sender.tag {
         case 0:
